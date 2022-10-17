@@ -8,10 +8,11 @@ Created on Fri Oct  7 13:36:38 2022
 import pandas as pd
 import plotly.express as px
 import plotly.io as io
+import os
 
 io.renderers.default = 'svg'
 
-
+root_path = os.getcwd()[:os.getcwd().find('/data-scientist-job-classify')+len('data-scientist-job-classify/')]
 
 def salary_jobType(data, magntitude, plot_type):
     
@@ -23,12 +24,12 @@ def salary_jobType(data, magntitude, plot_type):
         if magntitude == 'Min':
         
             fig = px.box(data, x = data['Job Type'], y=data['Min_Salary'], title = f"{'Box Plot of '}{magntitude}{' Salary'}")
-            fig.write_image("./plot/Min_salary_Job_Type_box.png")
+            fig.write_image(root_path+"/plot/Min_salary_Job_Type_box.png")
             fig.show()  
         elif magntitude == 'Max':
         
             fig = px.box(data, x = data['Job Type'], y=data['Max_Salary'], title = f"{'Box Plot of '}{magntitude}{' Salary'}")
-            fig.write_image("./plot/Max_salary_Job_Type_box.png")
+            fig.write_image(root_path+"/plot/Max_salary_Job_Type_box.png")
             fig.show()
         
     elif plot_type == 'hist':
@@ -36,12 +37,12 @@ def salary_jobType(data, magntitude, plot_type):
         if magntitude == 'Min':
             
             fig = px.histogram(data, x = data["Min_Salary"], color = data["Job Type"],barmode='overlay' , title =f"{'Histogram of '}{magntitude}{' Salary'}" )
-            fig.write_image("./plot/Min_Salary_Job_Type_bar.png")
+            fig.write_image(root_path+"/plot/Min_Salary_Job_Type_bar.png")
             fig.show()
         elif magntitude == 'Max':
             
             fig = px.histogram(data, x = data["Max_Salary"], color = data["Job Type"],barmode='overlay' , title =f"{'Histogram of '}{magntitude}{' Salary'}" )
-            fig.write_image("./plot/Max_Salary_Job_Type_bar.png")
+            fig.write_image(root_path+"/plot/Max_Salary_Job_Type_bar.png")
             fig.show()
             
 
@@ -53,14 +54,14 @@ def founded_jobType(data, new = False):
         data.dropna(subset =['Founded'], inplace = True)
         data.drop(data[data['Founded'] < 2012].index, inplace = True)
         fig = px.histogram(data, x = data["Founded"], color=data['Job Type'], barmode='overlay', title = 'Histogram of Founded' )
-        fig.write_image("./plot/founded_Job_Type_bar.png")
+        fig.write_image(root_path+"/plot/founded_Job_Type_bar.png")
         fig.show()
     
     elif new == False:
         
         data.dropna(subset =['Founded'], inplace = True)
         fig = px.histogram(data, x = data["Founded"], color=data['Job Type'], barmode='overlay' , title = 'Histogram of new Founded' )
-        fig.write_image("./plot/founded_new_Job_Type_bar.png")
+        fig.write_image(root_path+"/plot/founded_new_Job_Type_bar.png")
         fig.show()
 
 
@@ -79,7 +80,7 @@ def size_jobType(data, job):
         data= data[data['Job Type'] == 'Bussiness Analyst']
     
     fig = px.scatter(data, x = data['Min_Salary'], y = data['Max_Size'], title = f"{'Scatter Plot of size and min salary of '}{job}")
-    fig.write_image(f"{'./plot/'}{'size_and_min_salary_'}{job}{'.png'}")
+    fig.write_image(f"{root_path}{'/plot/'}{'size_and_min_salary_'}{job}{'.png'}")
     fig.show()
 
 
@@ -99,7 +100,7 @@ def langue_jobType(data, langues):
     
     
     fig = px.pie(data, values = langues, names = 'Job Type',color = 'Job Type', title = f"{'Pie chart of Job Type and '}{langues}")
-    fig.write_image(f"{'./plot/'}{'Pie_chart_of_job_type_'}{langues}{'.png'}")
+    fig.write_image(f"{root_path}{'/plot/'}{'Pie_chart_of_job_type_'}{langues}{'.png'}")
     fig.show()
 
 
@@ -114,7 +115,7 @@ def degree_jobType(data, degree):
 
 
     fig = px.pie(data, values = degree, names = 'Job Type',color = 'Job Type', title = f"{'Pie chart of Job Type and '}{degree}")
-    fig.write_image(f"{'./plot/'}{'Pie_chart_of_job_type_'}{degree}{'.png'}")
+    fig.write_image(f"{root_path}{'/plot/'}{'Pie_chart_of_job_type_'}{degree}{'.png'}")
     fig.show()
 
 
@@ -137,7 +138,7 @@ def tools_jobType(data, tools):
 
         
     fig = px.pie(data, values = tools, names = 'Job Type',color = 'Job Type', title = f"{'Pie chart of Job Type and '}{tools}")
-    fig.write_image(f"{'./plot/'}{'Pie_chart_of_job_type_'}{tools}{'.png'}")
+    fig.write_image(f"{root_path}{'/plot/'}{'Pie_chart_of_job_type_'}{tools}{'.png'}")
     fig.show()    
 
 
@@ -151,7 +152,7 @@ def faang_jobType(data, Senior = True):
         data= data[data['Senior'] == 1]
     
         fig = px.histogram(data, x = data["Job Type"], color = data['FAANG'] )
-        fig.write_image("./plot/FAANG_Job_Type_senior_bar.png")
+        fig.write_image(root_path+"/plot/FAANG_Job_Type_senior_bar.png")
         fig.show()
     
     elif Senior == False:
@@ -159,7 +160,7 @@ def faang_jobType(data, Senior = True):
         data= data[data['FAANG'] == 1]
         
         fig = px.histogram(data, x = data["Job Type"], color = data['FAANG'] )
-        fig.write_image("./plot/FAANG_Job_Type_bar.png")
+        fig.write_image(root_path+"/plot/FAANG_Job_Type_bar.png")
         fig.show()
         
 
@@ -168,7 +169,7 @@ def faang_jobType(data, Senior = True):
 
 if __name__ == '__main__':
     
-    data = pd.read_csv('./data/analysis/analysis_data.csv').drop('Unnamed: 0', axis = 1)
+    data = pd.read_csv(root_path+'/data/analysis/analysis_data.csv').drop('Unnamed: 0', axis = 1)
     
     salary_jobType(data, 'Min', 'box')
     salary_jobType(data, 'Max', 'box')

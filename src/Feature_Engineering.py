@@ -12,7 +12,7 @@ import re
 from colorama import init, Fore
 import logging
 import warnings
-
+import os
 ## add inplace
 
 class feature_engineering:    
@@ -23,8 +23,8 @@ class feature_engineering:
         init(autoreset = True)
         logging.getLogger().setLevel(logging.INFO)
         warnings.simplefilter('ignore')
-    
-        self.data = pd.read_csv('./data/analysis/combined_data.csv').drop('Unnamed: 0', axis =1)
+        self.root_path = os.getcwd()[:os.getcwd().find('/data-scientist-job-classify')+len('data-scientist-job-classify/')]
+        self.data = pd.read_csv(self.root_path+'/data/analysis/combined_data.csv').drop('Unnamed: 0', axis =1)
         
         
     
@@ -57,7 +57,7 @@ class feature_engineering:
             
             data['Min_Salary'] = min_salary
             data['Max_Salary'] = max_salary
-            data.drop('Salary Estimate', axis = 1, inplace =True)    
+               
             
             
             logging.info(f"{'Rearrang the format of Estimate Salary'}{'·'*20}{Fore.GREEN}{'Pass'}")
@@ -345,11 +345,8 @@ class feature_engineering:
             output_data = self.company_name(output_data)
             output_data = self.founded(output_data)
             
-            #Tranfer USD to TWD and divid by the price index between US and TW
-            output_data['Min_Salary'] = (output_data['Min_Salary']*30)/2.66
-            output_data['Max_Salary'] = (output_data['Max_Salary']*30)/2.66
-            
-            output_data.to_csv('./data/analysis/analysis_data.csv')
+             
+            output_data.to_csv(self.root_path+'/data/analysis/analysis_data.csv')
             
             logging.info(f"{'Make the output data for analysis'}{'·'*20}{Fore.GREEN}{'Pass'}")
         except:

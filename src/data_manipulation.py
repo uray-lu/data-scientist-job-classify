@@ -10,11 +10,13 @@ Created on Mon Oct 10 19:06:22 2022
 
 import pandas as pd
 import numpy as np
+import os
 
-df_de = pd.read_csv('./data/raw/DataEngineer.csv')
-df_da = pd.read_csv('./data/raw/DataAnalyst.csv', index_col=(0))
-df_ba = pd.read_csv('./data/raw/BusinessAnalyst.csv')
-df_ds = pd.read_csv('./data/raw/DataScientist.csv', index_col=(0)).drop('index', axis =1)
+root_path = os.getcwd()[:os.getcwd().find('/data-scientist-job-classify')+len('data-scientist-job-classify/')]
+df_de = pd.read_csv(root_path+'/data/raw/DataEngineer.csv')
+df_da = pd.read_csv(root_path+'/data/raw/DataAnalyst.csv', index_col=(0))
+df_ba = pd.read_csv(root_path+'/data/raw/BusinessAnalyst.csv')
+df_ds = pd.read_csv(root_path+'/data/raw/DataScientist.csv', index_col=(0)).drop('index', axis =1)
 
 # drop meaningless columns
 df_ba1 = df_ba[:3692].drop(['Unnamed: 0', 'index'], axis = 1)
@@ -39,4 +41,4 @@ df_ds['Job Type'] = 'Data Scientist'
 df_combine = pd.concat([df_de, df_da, df_ds, df_ba]).reset_index(drop = True)
 df_combine.replace(['-1', -1.0], np.nan, inplace = True)
 df_combine.drop(['Easy Apply', 'Competitors'], axis = 1 , inplace = True)
-df_combine.to_csv('./data/analysis/combined_data.csv')
+df_combine.to_csv(root_path+'/data/analysis/combined_data.csv')
