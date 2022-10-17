@@ -119,19 +119,31 @@ if st.button('Find Job'):
     
     if job_type[0] == 0:
         
-        st.write('<p class="big-font">Your Sutible Job is Data Scientist.</p>',unsafe_allow_html=True)
+        new_title = '<p style="font-family:sans-serif; color:White; font-size: 42px;">Your Sutible Job is Data Scientist.</p>'
+        st.markdown(new_title, unsafe_allow_html=True)
+        sub_title = '<p style="font-family:sans-serif; color:White; font-size: 35px;">Jobs Recommended are below</p>'
+        st.markdown(sub_title, unsafe_allow_html=True)
         st.dataframe(data = job)
     elif job_type[0] == 1:
         
-        st.write('<p class="big-font">Your Sutible Job is Data Engineer.</p>',unsafe_allow_html=True)
+        new_title = '<p style="font-family:sans-serif; color:White; font-size: 42px;">Your Sutible Job is Data Engineer.</p>'
+        st.markdown(new_title, unsafe_allow_html=True)
+        sub_title = '<p style="font-family:sans-serif; color:White; font-size: 35px;">Jobs Recommended are below</p>'
+        st.markdown(sub_title, unsafe_allow_html=True)
         st.dataframe(data = job)
     elif job_type[0] == 2:
         
-        st.write('<p class="big-font">Your Sutible Job is Data Analyst.</p>',unsafe_allow_html=True)
+        new_title = '<p style="font-family:sans-serif; color:White; font-size: 42px;">Your Sutible Job is Data Analyst.</p>'
+        st.markdown(new_title, unsafe_allow_html=True)
+        sub_title = '<p style="font-family:sans-serif; color:White; font-size: 35px;">Jobs Recommended are below</p>'
+        st.markdown(sub_title, unsafe_allow_html=True)
         st.dataframe(data = job)        
     elif job_type[0] == 1:
         
-        st.write('<p class="big-font">Your Sutible Job is Business Analyst.</p>',unsafe_allow_html=True)
+        new_title = '<p style="font-family:sans-serif; color:White; font-size: 42px;">Your Sutible Job is Business Analyst.</p>'
+        st.markdown(new_title, unsafe_allow_html=True)
+        sub_title = '<p style="font-family:sans-serif; color:White; font-size: 35px;">Jobs Recommended are below</p>'
+        st.markdown(sub_title, unsafe_allow_html=True)
         st.dataframe(data = job)        
         
         
