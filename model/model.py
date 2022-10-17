@@ -14,7 +14,7 @@ from xgboost import XGBClassifier
 from colorama import Fore, init
 import pickle
 import logging
-import sys
+import os
 
 
 
@@ -27,8 +27,8 @@ logging.getLogger().setLevel(logging.INFO)
 class model:
     
     def __init__(self):    
-        
-        data = pd.read_csv('./data/analysis/analysis_data.csv').drop('Unnamed: 0', axis = 1)
+        self.root_path = os.getcwd()[:os.getcwd().find('/data-scientist-job-classify')+len('data-scientist-job-classify/')]
+        data = pd.read_csv(self.root_path+'/data/analysis/analysis_data.csv').drop('Unnamed: 0', axis = 1)
 
         modeling_data = data[['Job Type', 'Min_Salary', 'Max_Salary','FAANG','Senior','New_company' ,'Java','R', 'SQL','Python','Database','ETL' ,'OOP','Modeling', 'ML','Tableau','Power_BI','MS' ,'PHD']]
         df_ds = modeling_data[modeling_data['Job Type'] == 'Data Scientist']
@@ -163,7 +163,7 @@ class model:
         
         file_name = 'xgb_optimal_model.pkl'
         try:
-            pickle.dump(xg_optimal, open('./model/'+file_name, "wb"))
+            pickle.dump(xg_optimal, open(self.root_path+'/model/'+file_name, "wb"))
             
             logging.info(f"{'Model saving'}{'·'*20}{Fore.GREEN}{'Pass'}")
         except:
