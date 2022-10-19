@@ -4,6 +4,6 @@ sklearn
 xgboost
 streamlit == 1.11.0 
 joblib
-
+colorama
 
 
