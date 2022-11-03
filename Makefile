@@ -17,31 +17,35 @@ install: requirements.txt
 	python3 -m venv $(VENV)
 	$(PIP) install -r requirements.txt
 
-
 data_manipulation: #combine raw data
-data_manipulation: 
+data_manipulation: $(VENV)
+	. venv/bin/activate;
 	@python ./src/data_manipulation.py
 
 
 feature_engineering: # Extract feature and modify the data
-feature_engineering: 
+feature_engineering: $(VENV)
+	. venv/bin/activate;
 	@python ./src/Feature_Engineering.py
 
 
 
 
 model_construct: # tuning/training/save model
-model_construct: 
+model_construct: $(VENV)
+	. venv/bin/activate;
 	@python ./model/model.py
 
 
 main: # Test the model output.
-main: 
+main: $(VENV)
+	. venv/bin/activate;
 	@python main.py
 
 
 app: # Show the web app.
-app: 
+app: $(VENV)
+	. venv/bin/activate;
 	@streamlit run streamlit_app.py
 
 

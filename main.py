@@ -82,7 +82,7 @@ class product:
                          'Founded', 'Type of ownership', 'Industry', 'Sector', 'Revenue']].reset_index(drop = True)
         
         return result
-
+ 
 if __name__ == '__main__':
     
     
@@ -92,7 +92,3 @@ if __name__ == '__main__':
     product(test).jobType_recommend()
     product(test).job_recommend()
     
-
-
-
-

@@ -146,8 +146,7 @@ if st.button('Find Job'):
         st.markdown(sub_title, unsafe_allow_html=True)
         st.dataframe(data = job)        
         
-        
-    
+
 
         
         
