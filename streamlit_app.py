@@ -7,7 +7,7 @@ Created on Mon Oct 17 06:21:23 2022
 """
 
 import streamlit as st
-from product import product
+from backend.product import product
 
 
 st.write("# Find Your Sutibale Data Related Job")
