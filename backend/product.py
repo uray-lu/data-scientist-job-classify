@@ -51,7 +51,7 @@ class product:
             
             print(f"{'According to your Excepted Salary and Ability, the Job fit you the most is: '}{Fore.RED}{'Bussiness Analysis'}") 
         
-        return self.predict
+        return self.predict[0]
     
     def job_recommend(self):
         
