@@ -37,10 +37,10 @@ model_construct: $(VENV)
 	@python ./model/model.py
 
 
-main: # Test the model output.
-main: $(VENV)
+product_test: # Test the model output.
+product_test: $(VENV)
 	. venv/bin/activate;
-	@python main.py
+	@python ./test/product_test.py
 
 
 app: # Show the web app.
