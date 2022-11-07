@@ -1,9 +1,9 @@
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 from pydantic import BaseModel
 from product import product
-
-
+import logging
+import json
 
 class User_input(BaseModel):
 
@@ -26,18 +26,38 @@ class User_input(BaseModel):
     MS : bool
     PHD : bool
 
-
+def parse_csv(df):
+    res = df.to_json(orient="records")
+    parsed = json.loads(res)
+    return parsed
 
 app = FastAPI()
 
+
+@app.on_event("startup")
+async def startup_event():
+    logger = logging.getLogger("uvicorn")
+    logger.propagate = False
+    handler = logging.handlers.RotatingFileHandler("api.log",mode="a",maxBytes = 100*1024, backupCount = 3)
+    handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
+    logger.addHandler(handler)
+    
+
 @app.get('/')
 def read_root():
-	return {'message': 'This is the homepage of the API '}
+	return {'statue': 'API still alive'}
 
 
-@app.post("/prediction")
+@app.post("/job_type_prediction")
 def return_prediction(input:User_input):
     recive = input.dict()
-    result = product(recive).jobType_recommend
-    return result
+    prediction = product(recive).jobType_recommend()
 
+    return {'Prediction': prediction}
+
+@app.post("/job_recommand")
+def get_data(input:User_input):
+    receive = input.dict()
+    data = product(receive).job_recommend()
+
+    return parse_csv(data)
