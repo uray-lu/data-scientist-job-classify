@@ -23,36 +23,28 @@ class product:
         
         if self.predict[0] == 0:
             
-            data = data[data['Job Type']== 'Data Scientist'] 
+            data = data[data['Job Type']== 'Data Scientist']
+            self.jobType = 'Data Scientist' 
         elif self.predict[0] == 1:
             
-            data = data[data['Job Type']== 'Data Engineer'] 
+            data = data[data['Job Type']== 'Data Engineer']
+            self.jobType = 'Data Engineer' 
         elif self.predict[0] == 2:
             
             data = data[data['Job Type']== 'Data Analyst']
+            self.jobType = 'Data Analyst'
         elif self.predict[0] == 3:
             
             data = data[data['Job Type']== 'Bussiness Analyst'] 
-
+            self.jobType = 'Business Analyst'
+        
         self.data = data
 
     def jobType_recommend(self):
         
-        if self.predict[0] == 0:
-            
-            print(f"{'According to your Excepted Salary and Ability, the Job fit you the most is: '}{Fore.RED}{'Data Scientist'}")
-        elif self.predict[0] == 1:
-            
-            print(f"{'According to your Excepted Salary and Ability, the Job fit you the most is: '}{Fore.RED}{'Data Engineer'}")
-        elif self.predict[0] == 2:
-            
-            print(f"{'According to your Excepted Salary and Ability, the Job fit you the most is: '}{Fore.RED}{'Data Analyst'}")
-        elif self.predict[0] == 3:
-            
-            print(f"{'According to your Excepted Salary and Ability, the Job fit you the most is: '}{Fore.RED}{'Bussiness Analysis'}") 
+        return (f"{'According to your Excepted Salary and Ability, the Job fit you the most is: '}{self.jobType}")
+      
         
-        return self.predict[0]
-    
     def job_recommend(self):
         
 
@@ -89,3 +81,5 @@ if __name__ == '__main__':
     
     product(test).jobType_recommend()
     product(test).job_recommend()
+
+    
