@@ -1,0 +1,408 @@
+2022-11-05 23:46:37,778 - INFO - Application startup complete.
+2022-11-05 23:46:55,591 - INFO - Shutting down
+2022-11-05 23:46:55,693 - INFO - Waiting for application shutdown.
+2022-11-05 23:46:55,693 - INFO - Application shutdown complete.
+2022-11-05 23:46:55,693 - INFO - Finished server process [13230]
+2022-11-05 23:46:59,935 - INFO - 127.0.0.1:55484 - "GET /docs HTTP/1.1" 200
+2022-11-05 23:46:59,994 - INFO - 127.0.0.1:55484 - "GET /openapi.json HTTP/1.1" 200
+2022-11-05 23:52:44,757 - INFO - Application startup complete.
+2022-11-05 23:52:53,054 - INFO - Shutting down
+2022-11-05 23:52:53,156 - INFO - Waiting for application shutdown.
+2022-11-05 23:52:53,156 - INFO - Application shutdown complete.
+2022-11-05 23:52:53,156 - INFO - Finished server process [14009]
+2022-11-05 23:53:02,067 - INFO - Application startup complete.
+2022-11-05 23:53:06,115 - INFO - Shutting down
+2022-11-05 23:53:06,216 - INFO - Waiting for application shutdown.
+2022-11-05 23:53:06,216 - INFO - Application shutdown complete.
+2022-11-05 23:53:06,217 - INFO - Finished server process [14147]
+2022-11-05 23:53:06,603 - INFO - Application startup complete.
+2022-11-05 23:53:32,406 - INFO - Shutting down
+2022-11-05 23:53:32,508 - INFO - Waiting for application shutdown.
+2022-11-05 23:53:32,508 - INFO - Application shutdown complete.
+2022-11-05 23:53:32,508 - INFO - Finished server process [14248]
+2022-11-05 23:53:32,903 - INFO - Application startup complete.
+2022-11-05 23:53:33,919 - INFO - Shutting down
+2022-11-05 23:53:34,020 - INFO - Waiting for application shutdown.
+2022-11-05 23:53:34,021 - INFO - Application shutdown complete.
+2022-11-05 23:53:34,021 - INFO - Finished server process [14407]
+2022-11-05 23:53:34,469 - INFO - Application startup complete.
+2022-11-05 23:53:38,011 - INFO - Shutting down
+2022-11-05 23:53:38,113 - INFO - Waiting for application shutdown.
+2022-11-05 23:53:38,113 - INFO - Application shutdown complete.
+2022-11-05 23:53:38,113 - INFO - Finished server process [14491]
+2022-11-05 23:53:38,507 - INFO - Application startup complete.
+2022-11-05 23:54:02,833 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/applications.py", line 270, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 75, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 64, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 680, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 275, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/routing.py", line 235, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/routing.py", line 163, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/concurrency.py", line 41, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/anyio/to_thread.py", line 31, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 937, in run_sync_in_worker_thread
+    return await future
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 867, in run
+    result = context.run(func, *args)
+  File "/Users/ray/Desktop/projects/data-scientist-job-classify/backend/./main.py", line 52, in return_prediction
+    return predictio
+NameError: name 'predictio' is not defined
+2022-11-05 23:54:15,463 - INFO - Shutting down
+2022-11-05 23:54:15,565 - INFO - Waiting for application shutdown.
+2022-11-05 23:54:15,565 - INFO - Application shutdown complete.
+2022-11-05 23:54:15,565 - INFO - Finished server process [14588]
+2022-11-05 23:54:16,040 - INFO - Application startup complete.
+2022-11-05 23:54:30,009 - INFO - Shutting down
+2022-11-05 23:54:30,111 - INFO - Waiting for application shutdown.
+2022-11-05 23:54:30,112 - INFO - Application shutdown complete.
+2022-11-05 23:54:30,112 - INFO - Finished server process [14791]
+2022-11-05 23:54:30,523 - INFO - Application startup complete.
+2022-11-05 23:55:39,051 - INFO - Shutting down
+2022-11-05 23:55:39,153 - INFO - Waiting for application shutdown.
+2022-11-05 23:55:39,153 - INFO - Application shutdown complete.
+2022-11-05 23:55:39,153 - INFO - Finished server process [14952]
+2022-11-05 23:55:59,018 - INFO - 127.0.0.1:55549 - "GET /docs HTTP/1.1" 200
+2022-11-05 23:55:59,076 - INFO - 127.0.0.1:55549 - "GET /openapi.json HTTP/1.1" 200
+2022-11-05 23:58:08,007 - INFO - 127.0.0.1:55556 - "GET /docs HTTP/1.1" 200
+2022-11-05 23:58:08,062 - INFO - 127.0.0.1:55556 - "GET /openapi.json HTTP/1.1" 200
+2022-11-05 23:59:46,154 - INFO - 127.0.0.1:55563 - "GET /docs HTTP/1.1" 200
+2022-11-05 23:59:46,207 - INFO - 127.0.0.1:55563 - "GET /openapi.json HTTP/1.1" 200
+2022-11-05 23:59:50,051 - INFO - 127.0.0.1:55563 - "POST /prediction HTTP/1.1" 200
+2022-11-06 00:00:16,371 - INFO - 127.0.0.1:55571 - "GET /docs HTTP/1.1" 200
+2022-11-06 00:00:16,431 - INFO - 127.0.0.1:55571 - "GET /openapi.json HTTP/1.1" 200
+2022-11-06 00:00:20,002 - INFO - 127.0.0.1:55571 - "POST /prediction HTTP/1.1" 500
+2022-11-06 00:00:43,643 - INFO - Application startup complete.
+2022-11-06 00:01:31,528 - INFO - Shutting down
+2022-11-06 00:01:31,629 - INFO - Waiting for application shutdown.
+2022-11-06 00:01:31,629 - INFO - Application shutdown complete.
+2022-11-06 00:01:31,629 - INFO - Finished server process [16004]
+2022-11-06 00:01:32,816 - INFO - Application startup complete.
+2022-11-06 00:01:51,310 - INFO - Shutting down
+2022-11-06 00:01:51,412 - INFO - Waiting for application shutdown.
+2022-11-06 00:01:51,412 - INFO - Application shutdown complete.
+2022-11-06 00:01:51,412 - INFO - Finished server process [16278]
+2022-11-06 00:01:51,906 - INFO - Application startup complete.
+2022-11-06 00:02:02,679 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/encoders.py", line 152, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'wrapper_descriptor' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/encoders.py", line 157, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/applications.py", line 270, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 75, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 64, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 680, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 275, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/routing.py", line 253, in app
+    content = await serialize_response(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/routing.py", line 150, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/encoders.py", line 117, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/encoders.py", line 161, in jsonable_encoder
+    return jsonable_encoder(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/encoders.py", line 161, in jsonable_encoder
+    return jsonable_encoder(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/encoders.py", line 117, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/encoders.py", line 160, in jsonable_encoder
+    raise ValueError(errors)
+ValueError: [TypeError("'wrapper_descriptor' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+2022-11-06 00:02:37,272 - INFO - Shutting down
+2022-11-06 00:02:37,374 - INFO - Waiting for application shutdown.
+2022-11-06 00:02:37,374 - INFO - Application shutdown complete.
+2022-11-06 00:02:37,374 - INFO - Finished server process [16420]
+2022-11-06 00:02:37,826 - INFO - Application startup complete.
+2022-11-06 00:02:51,797 - INFO - Shutting down
+2022-11-06 00:02:51,899 - INFO - Waiting for application shutdown.
+2022-11-06 00:02:51,900 - INFO - Application shutdown complete.
+2022-11-06 00:02:51,900 - INFO - Finished server process [16567]
+2022-11-07 16:56:25,120 - INFO - Application startup complete.
+2022-11-07 16:56:39,640 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/encoders.py", line 152, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'wrapper_descriptor' object is not iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/encoders.py", line 157, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/applications.py", line 270, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 75, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 64, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 680, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 275, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/routing.py", line 253, in app
+    content = await serialize_response(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/routing.py", line 150, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/encoders.py", line 117, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/encoders.py", line 161, in jsonable_encoder
+    return jsonable_encoder(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/encoders.py", line 161, in jsonable_encoder
+    return jsonable_encoder(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/encoders.py", line 117, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/encoders.py", line 160, in jsonable_encoder
+    raise ValueError(errors)
+ValueError: [TypeError("'wrapper_descriptor' object is not iterable"), TypeError('vars() argument must have __dict__ attribute')]
+2022-11-07 16:57:04,414 - INFO - Shutting down
+2022-11-07 16:57:04,515 - INFO - Waiting for application shutdown.
+2022-11-07 16:57:04,515 - INFO - Application shutdown complete.
+2022-11-07 16:57:04,515 - INFO - Finished server process [17653]
+2022-11-07 16:57:04,969 - INFO - Application startup complete.
+2022-11-07 16:57:23,284 - INFO - Shutting down
+2022-11-07 16:57:23,386 - INFO - Waiting for application shutdown.
+2022-11-07 16:57:23,386 - INFO - Application shutdown complete.
+2022-11-07 16:57:23,386 - INFO - Finished server process [17857]
+2022-11-07 16:57:23,857 - INFO - Application startup complete.
+2022-11-07 21:28:54,713 - INFO - Shutting down
+2022-11-07 21:28:54,816 - INFO - Waiting for application shutdown.
+2022-11-07 21:28:54,817 - INFO - Application shutdown complete.
+2022-11-07 21:28:54,817 - INFO - Finished server process [18020]
+2022-11-07 22:58:58,626 - INFO - Application startup complete.
+2022-11-07 23:00:01,173 - INFO - Shutting down
+2022-11-07 23:00:01,274 - INFO - Waiting for application shutdown.
+2022-11-07 23:00:01,281 - INFO - Application shutdown complete.
+2022-11-07 23:00:01,281 - INFO - Finished server process [19551]
+2022-11-07 23:00:01,677 - INFO - Application startup complete.
+2022-11-07 23:00:54,979 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/applications.py", line 270, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 75, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 64, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 680, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 275, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/routing.py", line 264, in app
+    response = actual_response_class(content, **response_args)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/responses.py", line 192, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/responses.py", line 54, in __init__
+    self.body = self.render(content)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/responses.py", line 195, in render
+    return json.dumps(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+ValueError: Out of range float values are not JSON compliant
+2022-11-07 23:01:33,969 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/applications.py", line 270, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 75, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 64, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 680, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 275, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/routing.py", line 264, in app
+    response = actual_response_class(content, **response_args)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/responses.py", line 192, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/responses.py", line 54, in __init__
+    self.body = self.render(content)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/responses.py", line 195, in render
+    return json.dumps(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+ValueError: Out of range float values are not JSON compliant
+2022-11-07 23:01:52,644 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/applications.py", line 270, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 75, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 64, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 680, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 275, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/routing.py", line 264, in app
+    response = actual_response_class(content, **response_args)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/responses.py", line 192, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/responses.py", line 54, in __init__
+    self.body = self.render(content)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/responses.py", line 195, in render
+    return json.dumps(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+ValueError: Out of range float values are not JSON compliant
+2022-11-07 23:04:55,363 - INFO - Shutting down
+2022-11-07 23:04:55,464 - INFO - Waiting for application shutdown.
+2022-11-07 23:04:55,464 - INFO - Application shutdown complete.
+2022-11-07 23:04:55,464 - INFO - Finished server process [19733]
+2022-11-07 23:04:55,908 - INFO - Application startup complete.
+2022-11-07 23:05:21,919 - INFO - Shutting down
+2022-11-07 23:05:22,020 - INFO - Waiting for application shutdown.
+2022-11-07 23:05:22,021 - INFO - Application shutdown complete.
+2022-11-07 23:05:22,021 - INFO - Finished server process [20028]
+2022-11-07 23:05:22,426 - INFO - Application startup complete.
+2022-11-07 23:06:29,234 - INFO - Shutting down
+2022-11-07 23:06:29,336 - INFO - Waiting for application shutdown.
+2022-11-07 23:06:29,336 - INFO - Application shutdown complete.
+2022-11-07 23:06:29,336 - INFO - Finished server process [20127]
+2022-11-07 23:06:29,735 - INFO - Application startup complete.
+2022-11-07 23:08:02,892 - INFO - Shutting down
+2022-11-07 23:08:02,993 - INFO - Waiting for application shutdown.
+2022-11-07 23:08:02,994 - INFO - Application shutdown complete.
+2022-11-07 23:08:02,994 - INFO - Finished server process [20252]
+2022-11-07 23:08:03,484 - INFO - Application startup complete.
+2022-11-07 23:13:51,529 - INFO - Shutting down
+2022-11-07 23:13:51,632 - INFO - Waiting for application shutdown.
+2022-11-07 23:13:51,632 - INFO - Application shutdown complete.
+2022-11-07 23:13:51,632 - INFO - Finished server process [20456]
