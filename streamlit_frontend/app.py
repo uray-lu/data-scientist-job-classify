@@ -31,20 +31,20 @@ botton_color = st.markdown("""
                         height: 50px;
                         font-size: 30px;
                         font-weight: bold;
-                        
+                        border: 4px solid rgba(255, 147, 0, 0.2);
                         }
 
         </style>""", unsafe_allow_html=True)
 ## Basic config end ##
 
-### only check if there empty on all boxes
+### only check if there're any empty in all boxes
 def check_empty(values:list):
     
-    if (""|0) in values:    
+    if ("" in values or 0 in values):    
         st.warning(f"{'All the box required! Please select a value.'}")
-        
-    else:
         st.stop()
+    else:
+        pass
 
 #def to_Bool(valuse:list):
 
