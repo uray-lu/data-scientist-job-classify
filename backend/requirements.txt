@@ -1,0 +1,5 @@
+colorama==0.4.6
+fastapi==0.88.0
+pandas==1.5.1
+pydantic==1.10.2
+uvicorn==0.19.0
