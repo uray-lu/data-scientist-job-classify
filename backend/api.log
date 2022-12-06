@@ -406,3 +406,91 @@ ValueError: Out of range float values are not JSON compliant
 2022-11-07 23:13:51,632 - INFO - Waiting for application shutdown.
 2022-11-07 23:13:51,632 - INFO - Application shutdown complete.
 2022-11-07 23:13:51,632 - INFO - Finished server process [20456]
+2022-12-06 21:11:19,864 - INFO - Application startup complete.
+2022-12-06 21:13:35,579 - INFO - Shutting down
+2022-12-06 21:13:35,680 - INFO - Waiting for application shutdown.
+2022-12-06 21:13:35,680 - INFO - Application shutdown complete.
+2022-12-06 21:13:35,680 - INFO - Finished server process [80088]
+2022-12-06 21:13:36,150 - INFO - Application startup complete.
+2022-12-06 21:16:27,437 - INFO - Shutting down
+2022-12-06 21:16:27,539 - INFO - Waiting for application shutdown.
+2022-12-06 21:16:27,539 - INFO - Application shutdown complete.
+2022-12-06 21:16:27,539 - INFO - Finished server process [80325]
+2022-12-06 21:16:28,039 - INFO - Application startup complete.
+2022-12-06 21:17:04,376 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/applications.py", line 270, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 75, in __call__
+    raise exc
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 64, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 680, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 275, in handle
+    await self.app(scope, receive, send)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/fastapi/routing.py", line 264, in app
+    response = actual_response_class(content, **response_args)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/responses.py", line 192, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/responses.py", line 54, in __init__
+    self.body = self.render(content)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/site-packages/starlette/responses.py", line 195, in render
+    return json.dumps(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/dev/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+ValueError: Out of range float values are not JSON compliant
+2022-12-06 21:17:32,792 - INFO - Shutting down
+2022-12-06 21:17:32,894 - INFO - Waiting for application shutdown.
+2022-12-06 21:17:32,894 - INFO - Application shutdown complete.
+2022-12-06 21:17:32,894 - INFO - Finished server process [80523]
+2022-12-06 21:17:33,368 - INFO - Application startup complete.
+2022-12-06 21:20:25,090 - INFO - Shutting down
+2022-12-06 21:20:25,192 - INFO - Waiting for application shutdown.
+2022-12-06 21:20:25,193 - INFO - Application shutdown complete.
+2022-12-06 21:20:25,193 - INFO - Finished server process [80665]
+2022-12-06 21:20:25,677 - INFO - Application startup complete.
+2022-12-06 21:21:34,278 - INFO - Shutting down
+2022-12-06 21:21:34,381 - INFO - Waiting for application shutdown.
+2022-12-06 21:21:34,381 - INFO - Application shutdown complete.
+2022-12-06 21:21:34,381 - INFO - Finished server process [80845]
+2022-12-06 21:21:36,011 - INFO - Application startup complete.
+2022-12-06 21:26:46,682 - INFO - Shutting down
+2022-12-06 21:26:46,783 - INFO - Waiting for application shutdown.
+2022-12-06 21:26:46,783 - INFO - Application shutdown complete.
+2022-12-06 21:26:46,783 - INFO - Finished server process [80976]
+2022-12-06 21:26:47,339 - INFO - Application startup complete.
+2022-12-06 21:26:47,441 - INFO - Shutting down
+2022-12-06 21:26:47,542 - INFO - Waiting for application shutdown.
+2022-12-06 21:26:47,542 - INFO - Application shutdown complete.
+2022-12-06 21:26:47,542 - INFO - Finished server process [81555]
+2022-12-06 21:26:48,031 - INFO - Application startup complete.
+2022-12-06 21:57:38,342 - INFO - Shutting down
+2022-12-06 21:57:38,443 - INFO - Waiting for application shutdown.
+2022-12-06 21:57:38,443 - INFO - Application shutdown complete.
+2022-12-06 21:57:38,443 - INFO - Finished server process [81608]
+2022-12-06 21:57:38,933 - INFO - Application startup complete.
+2022-12-06 22:42:49,650 - INFO - Shutting down
+2022-12-06 22:42:49,753 - INFO - Waiting for application shutdown.
+2022-12-06 22:42:49,753 - INFO - Application shutdown complete.
+2022-12-06 22:42:49,753 - INFO - Finished server process [82581]
