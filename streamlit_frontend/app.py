@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import requests
 
 
 ## Basic config start ##
@@ -41,7 +42,7 @@ botton_color = st.markdown("""
 def check_empty(values:list):
     
     if ("" in values or 0 in values):    
-        st.warning(f"{'All the box required! Please select a value.'}")
+        st.warning(f"{'All the boxes are required! Please select a value.'}")
         st.stop()
     else:
         pass
@@ -58,7 +59,7 @@ def main():
     st.header("Recommend the suitable Data Related Job Type For You")
     st.write("This application enables to classify the suitable Data Related Job Type according to your Ability and Expectation.")
 
-    activities = ["Job Type Recommend","Currently Opening Job Recommend","Persional Report","About this AI application"]
+    activities = ["Job Type Recommend","About this AI application"]#"Currently Opening Job Recommend",#"Persional Report"
     st.sidebar.title("Navigation")
     choice = st.sidebar.radio("",activities)
        
@@ -88,12 +89,29 @@ def main():
         PHD = col2.selectbox("Education : PH.D.",["", "Yes","No"], format_func=lambda x: 'Select an option' if x == "" else x)
         
 
-        features_list = [Min_Salary, Max_Salary, FAANG, Senior, New_company, Java, R, SQL, Python, Database, ETL, OOP, 
-                    Modeling, ML, Tableau, Power_BI, MS, PHD]
+        features_list = {'Min_Salary':Min_Salary, 'Max_Salary':Max_Salary, 'FAANG':FAANG, 'Senior':Senior, 'New_company':New_company, 
+                        'Java':Java, 'R':R, 'SQL':SQL, 'Python':Python, 'Database':Database, 'ETL':ETL, 'OOP':OOP, 'Modeling':Modeling, 
+                        'ML':ML, 'Tableau':Tableau, 'Power_BI':Power_BI, 'MS':MS, 'PHD':PHD}
+        
+        check_value = list(features_list.values())
+
+        for element in list(features_list.keys()):
+            if features_list[element] == 'Yes':
+                features_list[element] = True
+            elif features_list[element] == 'No':
+                features_list[element] = False
+            
+
 
         if st.button("Click Here to Find Your Job!"):
+
+            check_empty(check_value)
+            st.header(features_list)
+
+            #res = requests.post(url = 'http://127.0.0.1:8000/job_type_prediction', data = features_list)
+
             
-            check_empty(features_list)
+
 
 
         
