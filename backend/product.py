@@ -16,7 +16,7 @@ class product:
         self.input_data = pd.DataFrame([input_info])
         self.root_path = os.getcwd()[:os.getcwd().find('/data-scientist-job-classify')+len('data-scientist-job-classify/')]
         
-        xgb_model_loaded = pickle.load(open(self.root_path+'/model/xgb_optimal_model.pkl', "rb"))
+        xgb_model_loaded = pickle.load(open('xgb_optimal_model.pkl', "rb"))
         data = pd.read_csv(self.root_path+'/data/analysis/analysis_data.csv').drop('Unnamed: 0', axis =1)
         
         self.predict = xgb_model_loaded.predict(self.input_data)
