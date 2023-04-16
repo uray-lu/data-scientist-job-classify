@@ -1,8 +1,7 @@
 # Site 
 
-* The current testing 
-    * site https://data-scientist-job-classify.herokuapp.com/ 
-    * Just enter the Website and check the Prototype 
+* EDA
+
 
 
 # data-scientist-job-classifier
