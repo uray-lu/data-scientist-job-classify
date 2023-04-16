@@ -1,6 +1,6 @@
-# Site 
+# EDA
 
-* EDA
+https://github.com/uray-lu/data-scientist-job-classify/blob/0da7f57ef1f4812850e97bc005385aca2ec6ba63/EDA.pdf
 
 
 
