@@ -2,8 +2,10 @@
 
 https://github.com/uray-lu/data-scientist-job-classify/blob/0da7f57ef1f4812850e97bc005385aca2ec6ba63/EDA.pdf
 
-
-
+#Front end layout
+![Enter your Qualifications & Get the job type recommend.](https://github.com/uray-lu/data-scientist-job-classify/blob/main/frontend_layout/front_end1.png)
+![Change page by the side button](https://github.com/uray-lu/data-scientist-job-classify/blob/main/frontend_layout/front_end3.png)
+![Currently hiring list](https://github.com/uray-lu/data-scientist-job-classify/blob/main/frontend_layout/front_end2.png)
 # data-scientist-job-classifier
 
 ### To Classify and Recommend the Data Related Job By the Applicant's conditions and expected Salary.
