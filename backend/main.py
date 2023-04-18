@@ -4,6 +4,8 @@ from pydantic import BaseModel
 from product import product
 import logging
 import json
+import uvicorn
+
 
 class User_input(BaseModel):
 
@@ -61,3 +63,8 @@ def get_data(input:User_input):
     data = product(receive).job_recommend()
 
     return parse_csv(data)
+
+
+
+if __name__ == "__main__":
+    uvicorn.run("main:app")

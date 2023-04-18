@@ -55,7 +55,7 @@ class product:
         inable_key = list(inable.keys())
     
     
-        mask1 = (self.data[salary_key[0]] > salary_value[0])&(self.data[salary_key[1]]<salary_value[1])
+        mask1 = (self.data[salary_key[0]] >= salary_value[0])&(self.data[salary_key[1]]<= salary_value[1])
 
         self.data = self.data[mask1]
 
